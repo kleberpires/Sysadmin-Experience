@@ -1,0 +1,27 @@
+### Updating repositoty
+  sudo apt-get update
+
+
+### Installing Rsyslog
+  sudo apt-get install rsyslog
+
+
+### Checking rsyslog version
+  rsyslogd -v
+
+
+### Creating directoty for logs and changing its ownership
+  sudo mkdir /var/log/LOGS_DIRECTORY
+  sudo chown -R syslog:adm /var/log/LOGS_DIRECTORY/
+
+
+### Edit the "/etc/rsyslog.conf" allowing UDP or TCP and sources (IP and/or network)
+
+** Allow UDP example:
+# Provides UDP syslog reception
+$ModLoad imudp
+$UDPServerRun 514
+
+** Allow sources
+$AllowedSender UDP, 127.0.0.1, 192.168.1.1
+
