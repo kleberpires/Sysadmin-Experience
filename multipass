@@ -1,0 +1,28 @@
+** Created named instance (limited resources)
+multipass launch -n ubuntu-lts
+multipass launch -n ubuntu-lts -d 40G -m 4G
+
+** Executing command on instance from bash 
+multipass exec ubuntu-lts -- lsb_release -a
+
+** Create custom instance. Sample files on “https://cloudinit.readthedocs.io/en/latest/topics/examples.html”
+multipass launch -n ubuntu-lts-custom — cloud-init cloud-config.yaml
+
+** Accessing instance shell
+multipass shell -n ubuntu-lts
+
+** Mouting drive to instance
+multipass mount C:\ ubuntu-lts
+
+** Linting instances
+multipass lsit
+
+** Stopping Instance
+multipass stop ubuntu-lts
+
+** Deleting instance
+multipass delete ubuntu-lts
+
+** Purging deleted instances
+multipass purge
+
