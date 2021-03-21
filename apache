@@ -1,0 +1,66 @@
+** Installing Apache
+sudo apt-get update
+sudo apt-get install apache2
+
+$ apache2 -v
+Server version: Apache/2.4.29 (Ubuntu)
+
+** Default Apache location
+cd /var/www/html/
+
+** Default Apache page
+sudo nano /var/www/html/index.html
+
+** create a symbolic link to directory
+sudo ln -s /var/log/NetworkLog/
+
+** Change default file order
+sudo nano /etc/apache2/mods-enabled/dir.conf
+
+** Sites location and default site
+/etc/apache2/sites-available/000-default.conf
+
+** Find public IP
+curl http://icanhazip.com
+
+
+** New directory for site
+sudo mkdir /var/www/<DOMAIN DIR>
+
+** Assign ownership of the directory with the $USER environment variable
+sudo chown -R $USER:$USER /var/www/<DOMAIN DIR>
+
+** The permissions of your web roots should be correct if you haven’t modified your unmask value
+sudo chmod -R 755 /var/www/<DOMAIN DIR>
+
+** Createsample index.html
+nano /var/www/<DOMAIN DIR>/index.html
+
+<html>
+    <head>
+        <title>Welcome to Your_domain!</title>
+    </head>
+    <body>
+        <h1>Success!  The your_domain server block is working!</h1>
+    </body>
+</html>
+
+
+** Create Virtual Host config
+sudo nano /etc/apache2/sites-available/<DOMAIN DIR>.conf
+
+<VirtualHost *:80>
+    ServerAdmin webmaster@localhost
+    ServerName <fqdn>
+    ServerAlias <alias fqdn>
+    DocumentRoot /var/www/<DOMAIN DIR>
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+
+
+** enable the file with the a2ensite tool
+sudo a2ensite your_domain.conf
+
+** sudo a2dissite 000-default.conf
+sudo a2dissite 000-default.conf
