@@ -12,13 +12,8 @@ APACHE
 MYSQL
   - First database setup
 
-
-
-
-
-
-
-
+MULTIPASS
+  - On-demand VMs with cloud-init
 
 
 
