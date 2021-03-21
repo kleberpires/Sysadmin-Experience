@@ -1,21 +1,21 @@
 # Sysadmin-Experience
 
-Repository destined to document and share Sysadmin practices tested on simple labs.
+*Repository* destined to document and share Sysadmin practices tested on simple labs.
 
 
-APACHE
+**APACHE**
   - Installing and creating a simple web service
 
 
-MULTIPASS
+**MULTIPASS**
   - On-demand VMs with cloud-init
 
 
-MYSQL
+**MYSQL**
   - First database setup
 
 
-RSYSLOG
+**RSYSLOG**
   - Linux bultin syslog service
 
 
