@@ -1,0 +1,38 @@
+DOCKER.IO
+
+** Update Software Repository
+sudo apt-get update
+
+
+** Uninstall Old Versions of Docker
+sudo apt-get remove docker docker-engine docker.io
+
+
+** Install Docker
+sudo apt install docker.io
+
+
+** Start and Automate Docker
+sudo systemctl start docker
+sudo systemctl enable docker
+
+
+
+
+
+DOCKER COMPOSE
+
+
+** Download the Docker Compose binary into the /usr/local/bin directory
+sudo curl -L “https://github.com/docker/compose/releases/download/1.23.1/docker-compose-$(uname -s)-$(uname -m)” -o /usr/local/bin/docker-compose
+
+
+** After downloaded, apply executable permissions to the Compose binary
+sudo chmod +x /usr/local/bin/docker-compose
+
+
+** Verify the installation
+docker-compose —version
+
+
+
